@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+.first {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-image: url("/hrana.jpg");
+  background-size: cover; /* Pokriva ceo div */
+  background-position: center; /* Centriranje slike */
+}
+.first h1 {
+  color: rgb(194, 194, 194);
+  font-size: 4rem;
+}
+.naslovh1 {
+  font-weight: 800;
+  color: white;
+  font-size: 4rem;
+}
+.naslov {
+  width: 30rem;
+  height: 10rem;
+  position: relative;
+  top: 10rem;
+  left: 5rem;
+}
+.naslov p {
+  color: white;
+  font-size: 1.2rem;
+  width: 32rem;
+}
+.second {
+  color: white;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(226, 225, 223);
+}
+.second .header {
+  width: 100%;
+  height: 5rem;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  position: relative;
+  top: 2rem;
+}
+.header button {
+  width: 10rem;
+  background-color: rgb(61, 61, 61);
+  color: white;
+}
+.menu {
+  width: 100%;
+  height: 70%;
+  position: relative;
+  top: 4rem;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  grid-template-rows: auto auto;
+  row-gap: 5rem;
+  column-gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  width: 10rem;
+  height: 15rem;
+  position: relative;
+  top: 6rem;
+  background-color: white;
+  border-radius: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.card h2 {
+  color: black;
+  position: relative;
+  bottom: 3rem;
+  font-weight: 400;
+}
+.card h1 {
+  color: orangered;
+  font-size: 1.5rem;
+  position: relative;
+  bottom: 4rem;
+}
+.card-image {
+  width: 80%;
+  height: 35rem;
+  border-radius: 50%;
+  position: relative;
+  bottom: 4rem;
+}
+.card-image img {
+  border-radius: 50%;
+  object-fit: cover;
+}
+.first i {
+  font-size: 1.2rem;
+  background-color: white;
+  width: 3.5rem;
+  height: 2.5rem;
+  border-radius: 30%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  color: black;
+  left: 1rem;
+  top: 1rem;
+  position: fixed;
+}
