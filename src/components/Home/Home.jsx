@@ -30,7 +30,7 @@ export default function Home() {
         <div className="menu">
           <div
             onClick={() => {
-              setOrderNum(orderNum + 1);
+              navigate("/Order");
             }}
             className="card"
           >
