@@ -3,10 +3,13 @@ import { AppContext } from "../AppContext";
 
 import "./Order.css";
 export default function Order() {
-  const { orderNum, setOrderNum } = useContext(AppContext);
+  const { orderNum, setOrderNum, foodType, setFoodType } =
+    useContext(AppContext);
   const [spices, setSpices] = useState([]);
   const [notes, setNotes] = useState([]);
   const handleSpice = (e) => {
+    console.log(foodType);
+
     const { value, checked } = e.target;
     if (checked) {
       setSpices([...spices, value]); // Dodavanje zacina

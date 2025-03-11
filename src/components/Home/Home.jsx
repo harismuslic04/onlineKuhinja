@@ -4,7 +4,14 @@ import { AppContext } from "../AppContext";
 import { useNavigate } from "react-router-dom";
 export default function Home() {
   const navigate = useNavigate();
-  const { orderNum, setOrderNum } = useContext(AppContext);
+  const { orderNum, setOrderNum, foodType, setFoodType } =
+    useContext(AppContext);
+  const handleOrderNum = () => {
+    setOrderNum(orderNum + 1);
+  };
+  const handleFoodType = (arg) => {
+    setFoodType(arg);
+  };
   return (
     <div className="main">
       <div className="first">
@@ -31,6 +38,8 @@ export default function Home() {
           <div
             onClick={() => {
               navigate("/Order");
+              handleOrderNum();
+              handleFoodType("gulas");
             }}
             className="card"
           >
