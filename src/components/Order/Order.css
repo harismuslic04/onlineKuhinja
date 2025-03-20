@@ -85,8 +85,17 @@
   cursor: pointer;
 }
 .textarea-notes {
+  position: absolute;
+  bottom: 0rem;
+  width: 80%;
+  height: 10rem;
+  left: 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+.textarea-notes2 {
   position: relative;
-  bottom: 40rem;
+  bottom: 20rem;
   width: 80%;
   height: 10rem;
   left: 1rem;

@@ -7,6 +7,7 @@ export default function Order() {
     useContext(AppContext);
   const [spices, setSpices] = useState([]);
   const [notes, setNotes] = useState([]);
+
   const handleSpice = (e) => {
     console.log(foodType);
 
@@ -26,27 +27,35 @@ export default function Order() {
         </div>
       </div>
       <div className="ordersecond">
-        <h1>Burger</h1>
-        <h2>Izaberi zacine:</h2>
-        <div className="spice-boxes">
-          {["kecap", "salata", "majonez", "tucana paprika"].map(
-            (spice, spiceIndex) => {
-              return (
-                <label key={spiceIndex} className="spice-label">
-                  {spice}
-                  <input type="checkbox" value={spice} onChange={handleSpice} />
-                </label>
-              );
-            }
-          )}
-        </div>
+        <h1>{foodType}</h1>
+        {foodType === "burger" && <h2>Izaberi zacine:</h2>}
+        {foodType === "burger" && (
+          <div className="spice-boxes">
+            {["kecap", "salata", "majonez", "tucana paprika"].map(
+              (spice, spiceIndex) => {
+                return (
+                  <label key={spiceIndex} className="spice-label">
+                    {spice}
+                    <input
+                      type="checkbox"
+                      value={spice}
+                      onChange={handleSpice}
+                    />
+                  </label>
+                );
+              }
+            )}
+          </div>
+        )}
         <textarea
           placeholder="Napomena"
           value={notes}
           onChange={(e) => {
             setNotes(e.target.value);
           }}
-          className="textarea-notes"
+          className={
+            foodType === "burger" ? "textarea-notes" : "textarea-notes2"
+          }
         ></textarea>
         <div className="order-button">Dodaj u korpu</div>
       </div>

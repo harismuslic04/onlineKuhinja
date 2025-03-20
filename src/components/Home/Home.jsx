@@ -6,18 +6,42 @@ export default function Home() {
   const navigate = useNavigate();
   const { orderNum, setOrderNum, foodType, setFoodType } =
     useContext(AppContext);
+  const [foodMenu, setFoodMenu] = useState({});
   const handleOrderNum = () => {
     setOrderNum(orderNum + 1);
   };
   const handleFoodType = (arg) => {
     setFoodType(arg);
   };
+  const kuvanajela = { gulas: 270, pasulj: 250 };
+  const rostilj = {
+    hamburger: 230,
+    batak: 250,
+    "belo meso": 250,
+    cevapi: 50,
+    cheesburger: 250,
+    domacavirsla: 230,
+    teletina: 400,
+  };
+  const slatko = { "palacinka nutela": 250, "palacinka eurokrem": 250 };
+  const pice = {
+    rosa: 70,
+    "coca cola": 80,
+    fanta: 80,
+    guarana: 80,
+    ultra: 80,
+    jabuka: 80,
+  };
   return (
     <div className="main">
       <div className="first">
         <i className="fa-solid fa-utensils">{orderNum}</i>
         <div className="naslov">
-          <h1>
+          <h1
+            onClick={() => {
+              console.log(foodMenu);
+            }}
+          >
             <span className="naslovh1">Poruci svoju</span> <br />
             omiljenu hranu
           </h1>
@@ -29,61 +53,54 @@ export default function Home() {
       </div>
       <div className="second">
         <div className="header">
-          <button>Kuvana jela</button>
-          <button>Rostilj</button>
-          <button>Slatki program</button>
-          <button>Piće</button>
+          <button
+            onClick={() => {
+              setFoodMenu(kuvanajela);
+            }}
+          >
+            Kuvana jela
+          </button>
+          <button
+            onClick={() => {
+              setFoodMenu(rostilj);
+            }}
+          >
+            Rostilj
+          </button>
+          <button
+            onClick={() => {
+              setFoodMenu(slatko);
+            }}
+          >
+            Slatki program
+          </button>
+          <button
+            onClick={() => {
+              setFoodMenu(pice);
+            }}
+          >
+            Piće
+          </button>
         </div>
         <div className="menu">
-          <div
-            onClick={() => {
-              navigate("/Order");
-              handleOrderNum();
-              handleFoodType("gulas");
-            }}
-            className="card"
-          >
-            <div className="card-image">
-              <img src="./gulas.jpeg" alt="" />
-            </div>
-            <h2>gulas</h2>
-            <h1>270din</h1>
-          </div>
-          <div className="card">
-            <div className="card-image">
-              <img src="./pasulj.jpg" alt="" />
-            </div>
-            <h2>gulas</h2>
-            <h1>270din</h1>
-          </div>
-          <div className="card">
-            <div className="card-image">
-              <img src="./burger.jpg" alt="" />
-            </div>
-            <h2>gulas</h2>
-            <h1>270din</h1>
-          </div>
-          <div className="card">
-            <div className="card-image">
-              <img src="./gulas.jpeg" alt="" />
-            </div>
-            <h2>gulas</h2>
-            <h1>270din</h1>
-          </div>
-          <div className="card">
-            <div className="card-image">
-              <img src="./gulas.jpeg" alt="" />
-            </div>
-            <h2>gulas</h2>
-            <h1>270din</h1>
-          </div>
-          <div className="card">
-            <div className="card-image">
-              <img src="./gulas.jpeg" alt="" />
-            </div>
-            <h2>gulas</h2>
-            <h1>270din</h1>
-          </div>
+          {Object.entries(foodMenu).map(([naziv, cena], foodIndex) => {
+            return (
+              <div className="card">
+                <div
+                  onClick={() => {
+                    navigate("/Order");
+                    handleOrderNum();
+                    handleFoodType("gulas");
+                  }}
+                  className="card-image"
+                >
+                  <img src={`./${foodIndex}.jpg`} alt="" />
+                </div>
+                <h2>{naziv}</h2>
+                <h1>{cena}</h1>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

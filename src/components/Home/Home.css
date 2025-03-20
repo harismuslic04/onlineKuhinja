@@ -39,6 +39,7 @@
   width: 100%;
   height: 100vh;
   background-color: rgb(226, 225, 223);
+  overflow: auto;
 }
 .second .header {
   width: 100%;
@@ -61,14 +62,13 @@
   width: 100%;
   height: 70%;
   position: relative;
-  top: 4rem;
-  display: grid;
-  grid-template-columns: auto auto auto auto auto auto;
-  grid-template-rows: auto auto;
-  row-gap: 5rem;
+  top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
   column-gap: 3rem;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 .card {
   width: 10rem;
@@ -93,7 +93,7 @@
   color: orangered;
   font-size: 1.5rem;
   position: relative;
-  bottom: 4rem;
+  bottom: 3rem;
 }
 .card-image {
   width: 80%;
