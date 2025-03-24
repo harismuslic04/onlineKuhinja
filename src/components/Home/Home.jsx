@@ -6,10 +6,26 @@ export default function Home() {
   const navigate = useNavigate();
   const { orderNum, setOrderNum, foodType, setFoodType } =
     useContext(AppContext);
-  const [foodMenu, setFoodMenu] = useState({});
-  const handleOrderNum = () => {
-    setOrderNum(orderNum + 1);
-  };
+  const [foodMenu, setFoodMenu] = useState({
+    gulas: 270,
+    pasulj: 250,
+    hamburger: 230,
+    batak: 250,
+    "belo meso": 250,
+    cevapi: 50,
+    cheesburger: 250,
+    domacavirsla: 230,
+    teletina: 400,
+    "palacinka nutela": 250,
+    "palacinka eurokrem": 250,
+    rosa: 70,
+    "coca cola": 80,
+    fanta: 80,
+    guarana: 80,
+    ultra: 80,
+    jabuka: 80,
+  });
+
   const handleFoodType = (arg) => {
     setFoodType(arg);
   };
@@ -89,12 +105,12 @@ export default function Home() {
                 <div
                   onClick={() => {
                     navigate("/Order");
-                    handleOrderNum();
-                    handleFoodType("gulas");
+                    handleFoodType(naziv);
                   }}
                   className="card-image"
                 >
-                  <img src={`./${foodIndex}.jpg`} alt="" />
+                  {/* <img src={`./${foodIndex}.jpg`} alt="" /> */}
+                  <img src={`./1.jpg`} alt="" />
                 </div>
                 <h2>{naziv}</h2>
                 <h1>{cena}</h1>

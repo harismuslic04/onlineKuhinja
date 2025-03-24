@@ -1,16 +1,18 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../AppContext";
+import { useNavigate } from "react-router-dom";
 
 import "./Order.css";
 export default function Order() {
-  const { orderNum, setOrderNum, foodType, setFoodType } =
+  const { orderNum, setOrderNum, foodType, setFoodType, order, setOrder } =
     useContext(AppContext);
   const [spices, setSpices] = useState([]);
   const [notes, setNotes] = useState([]);
-
+  const navigate = useNavigate();
+  const handleOrderNum = () => {
+    setOrderNum(orderNum + 1);
+  };
   const handleSpice = (e) => {
-    console.log(foodType);
-
     const { value, checked } = e.target;
     if (checked) {
       setSpices([...spices, value]); // Dodavanje zacina
@@ -23,13 +25,23 @@ export default function Order() {
       <div className="orderfirst">
         <i className="fa-solid fa-utensils">{orderNum}</i>
         <div className="orderimage">
-          <img src="./burger.jpg" alt="" />
+          <img src="./1.jpg" alt="" />
         </div>
       </div>
       <div className="ordersecond">
         <h1>{foodType}</h1>
-        {foodType === "burger" && <h2>Izaberi zacine:</h2>}
-        {foodType === "burger" && (
+        {(foodType === "hamburger" ||
+          foodType === "belo meso" ||
+          foodType === "batak" ||
+          foodType === "cevapi" ||
+          foodType === "cheesburger" ||
+          foodType === "domaca virsla") && <h2>Izaberi zacine:</h2>}
+        {(foodType === "hamburger" ||
+          foodType === "belo meso" ||
+          foodType === "batak" ||
+          foodType === "cevapi" ||
+          foodType === "cheesburger" ||
+          foodType === "domaca virsla") && (
           <div className="spice-boxes">
             {["kecap", "salata", "majonez", "tucana paprika"].map(
               (spice, spiceIndex) => {
@@ -54,10 +66,31 @@ export default function Order() {
             setNotes(e.target.value);
           }}
           className={
-            foodType === "burger" ? "textarea-notes" : "textarea-notes2"
+            foodType === "hamburger" ||
+            foodType === "belo meso" ||
+            foodType === "batak" ||
+            foodType === "cevapi" ||
+            foodType === "cheesburger" ||
+            foodType === "domaca virsla"
+              ? "textarea-notes"
+              : "textarea-notes2"
           }
         ></textarea>
-        <div className="order-button">Dodaj u korpu</div>
+        <div
+          className="order-button"
+          onClick={() => {
+            setOrder((prevOrder) => [
+              ...prevOrder,
+              { foodType, spices: Array.isArray(spices) ? spices : [spices] },
+            ]);
+            handleOrderNum();
+
+            navigate("/");
+
+          }}
+        >
+          Dodaj u korpu
+        </div>
       </div>
     </div>
   );

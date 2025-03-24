@@ -37,9 +37,14 @@
 .second {
   color: white;
   width: 100%;
-  height: 100vh;
-  background-color: rgb(226, 225, 223);
-  overflow: auto;
+  height: 170vh;
+  background: linear-gradient(
+    45deg,
+    rgb(70, 69, 69) 30%,
+    rgb(255, 215, 90) 70%
+  );
+
+  overflow: show;
 }
 .second .header {
   width: 100%;
@@ -55,27 +60,27 @@
 }
 .header button {
   width: 10rem;
-  background-color: rgb(61, 61, 61);
+  background-color: rgb(200, 50, 30);
   color: white;
 }
 .menu {
   width: 100%;
-  height: 70%;
+  height: auto;
   position: relative;
   top: 1rem;
   display: flex;
-  flex-wrap: wrap;
   gap: 5rem;
+  flex-wrap: wrap;
   column-gap: 3rem;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 .card {
   width: 10rem;
   height: 15rem;
   position: relative;
   top: 6rem;
-  background-color: white;
+  background-color: #222;
   border-radius: 25px;
   text-align: center;
   display: flex;
@@ -84,7 +89,7 @@
   cursor: pointer;
 }
 .card h2 {
-  color: black;
+  color: white;
   position: relative;
   bottom: 3rem;
   font-weight: 400;
