@@ -4,8 +4,16 @@ import { useNavigate } from "react-router-dom";
 
 import "./Order.css";
 export default function Order() {
-  const { orderNum, setOrderNum, foodType, setFoodType, order, setOrder } =
-    useContext(AppContext);
+  const {
+    orderNum,
+    setOrderNum,
+    foodType,
+    setFoodType,
+    order,
+    setOrder,
+    cena,
+    setCena,
+  } = useContext(AppContext);
   const [spices, setSpices] = useState([]);
   const [notes, setNotes] = useState([]);
   const navigate = useNavigate();
@@ -81,15 +89,21 @@ export default function Order() {
           onClick={() => {
             setOrder((prevOrder) => [
               ...prevOrder,
-              { foodType, spices: Array.isArray(spices) ? spices : [spices] },
+              {
+                foodType,
+                spices: Array.isArray(spices) ? spices : [spices],
+                price: cena,
+              },
             ]);
             handleOrderNum();
+            console.log(order);
 
             navigate("/");
-
           }}
         >
           Dodaj u korpu
+          <br />
+          <span className="cena">{cena} din</span>
         </div>
       </div>
     </div>

@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.bucketmain {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(252, 124, 5);
+}
+.bucket1 {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(252, 124, 5);
+}
+.bucket2 {
+  padding-top: 1rem;
+  width: 100%;
+  position: relative;
+  top: 10vh;
+  height: 100rem;
+  background-color: rgb(233, 233, 233);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  position: relative;
+}
+.bucketorder {
+  position: relative;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 95%;
+  height: 20%;
+  padding: 1rem;
+  border-radius: 25px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bucketorder1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.bucketorder2 {
+  width: 10rem;
+  height: 5rem;
+  text-align: center;
+  margin: auto;
+}
+.bucketorder2 p {
+  margin-top: 15%;
+  font-size: 1.5rem;
+  color: rgb(252, 124, 5);
+  font-weight: 800;
+}
+.bucket-button {
+  cursor: pointer;
+  width: 15%;
+  padding-top: 0.5rem;
+  height: 4rem;
+  border-radius: 30px;
+  background-color: rgb(252, 124, 5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  justify-self: center;
+  position: fixed;
+  bottom: 1rem;
+  left: 43%;
+}
+.nazad {
+  font-size: 2rem;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  background-color: white;
+  width: 3rem;
+  border-radius: 50%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

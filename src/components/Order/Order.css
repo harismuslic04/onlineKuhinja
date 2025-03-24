@@ -30,7 +30,8 @@
   position: relative;
   top: 1rem;
   left: 1rem;
-  width: 25rem;
+  width: 30rem;
+  font-size: 2rem;
 }
 .ordersecond h2 {
   position: relative;
@@ -111,16 +112,22 @@
 .order-button {
   cursor: pointer;
   width: 15%;
+  padding-top: 0.5rem;
   height: 4rem;
   border-radius: 30px;
   background-color: rgb(252, 124, 5);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
   font-weight: 700;
+  text-align: center;
   justify-self: center;
   position: fixed;
   bottom: 1rem;
   left: 43%;
 }
+/* .cena {
+  text-align: center;
+} */

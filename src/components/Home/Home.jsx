@@ -4,7 +4,7 @@ import { AppContext } from "../AppContext";
 import { useNavigate } from "react-router-dom";
 export default function Home() {
   const navigate = useNavigate();
-  const { orderNum, setOrderNum, foodType, setFoodType } =
+  const { orderNum, setOrderNum, foodType, setFoodType, cena, setCena } =
     useContext(AppContext);
   const [foodMenu, setFoodMenu] = useState({
     gulas: 270,
@@ -51,7 +51,14 @@ export default function Home() {
   return (
     <div className="main">
       <div className="first">
-        <i className="fa-solid fa-utensils">{orderNum}</i>
+        <i
+          className="fa-solid fa-utensils"
+          onClick={() => {
+            navigate("/bucket");
+          }}
+        >
+          {orderNum}
+        </i>
         <div className="naslov">
           <h1
             onClick={() => {
@@ -106,6 +113,7 @@ export default function Home() {
                   onClick={() => {
                     navigate("/Order");
                     handleFoodType(naziv);
+                    setCena(cena);
                   }}
                   className="card-image"
                 >
