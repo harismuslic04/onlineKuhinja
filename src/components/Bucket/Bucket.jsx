@@ -23,8 +23,10 @@ export default function Bucket() {
             <div className="bucketorder">
               <div className="bucketorder1">
                 <h2>{type.foodType}</h2>
-                {type.spices.length > 0 && (
+                {type.spices.length > 0 ? (
                   <p>Zacini: {type.spices.join(", ")}</p>
+                ) : (
+                  <p>Bez zacina </p>
                 )}
               </div>
 
