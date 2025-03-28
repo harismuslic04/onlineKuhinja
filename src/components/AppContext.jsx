@@ -8,6 +8,7 @@ function ContextProvider({ children }) {
   const [foodType, setFoodType] = useState("");
   const [order, setOrder] = useState([]);
   const [cena, setCena] = useState(0);
+  const [notification, setNotification] = useState(false);
   const values = {
     orderNum,
     setOrderNum,
@@ -17,6 +18,8 @@ function ContextProvider({ children }) {
     setOrder,
     cena,
     setCena,
+    notification,
+    setNotification,
   };
   return <AppContext.Provider value={values}>{children}</AppContext.Provider>;
 }

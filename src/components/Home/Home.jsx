@@ -1,11 +1,26 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Home.css";
 import { AppContext } from "../AppContext";
 import { useNavigate } from "react-router-dom";
 export default function Home() {
   const navigate = useNavigate();
-  const { orderNum, setOrderNum, foodType, setFoodType, cena, setCena } =
-    useContext(AppContext);
+  const {
+    orderNum,
+    setOrderNum,
+    foodType,
+    setFoodType,
+    cena,
+    setCena,
+    notification,
+    setNotification,
+  } = useContext(AppContext);
+  useEffect(() => {
+    if (notification) {
+      setTimeout(() => {
+        setNotification(false);
+      }, 2000);
+    }
+  }, [notification, setNotification]);
   const [foodMenu, setFoodMenu] = useState({
     gulas: 270,
     pasulj: 250,
@@ -127,6 +142,12 @@ export default function Home() {
           })}
         </div>
       </div>
+      {notification && (
+        <div className="notification">
+          <p>Artikal dodat u korpu</p>
+          <div className="progress-bar"></div>
+        </div>
+      )}
     </div>
   );
 }

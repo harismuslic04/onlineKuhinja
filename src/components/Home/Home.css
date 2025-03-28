@@ -126,3 +126,56 @@
   top: 1rem;
   position: fixed;
 }
+.notification {
+  position: fixed;
+  top: 20px;
+  height: 4rem;
+  width: 15rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #28a745;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+  z-index: 1000;
+  animation: drop-in 0.8s ease-out forwards;
+}
+
+@keyframes drop-in {
+  0% {
+    top: -10rem; /* Početna tačka izvan ekrana */
+    opacity: 0;
+  }
+  60% {
+    top: 2rem; /* Pada dole */
+    opacity: 1;
+  }
+  80% {
+    top: 1rem; /* Blagi odskok */
+  }
+  100% {
+    top: 2rem; /* Smiruje se */
+  }
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10rem;
+  background-color: white;
+  animation: progress-animation 2s linear forwards;
+}
+
+@keyframes progress-animation {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}

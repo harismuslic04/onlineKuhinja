@@ -13,7 +13,12 @@ export default function Order() {
     setOrder,
     cena,
     setCena,
+    setNotification,
   } = useContext(AppContext);
+  const handleAddToCart = () => {
+    setNotification(true);
+    navigate("/");
+  };
   const [spices, setSpices] = useState([]);
   const [notes, setNotes] = useState([]);
   const navigate = useNavigate();
@@ -96,9 +101,7 @@ export default function Order() {
               },
             ]);
             handleOrderNum();
-            console.log(order);
-
-            navigate("/");
+            handleAddToCart();
           }}
         >
           Dodaj u korpu
