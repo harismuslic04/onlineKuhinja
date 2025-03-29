@@ -62,6 +62,7 @@ export default function Order() {
                   <label key={spiceIndex} className="spice-label">
                     {spice}
                     <input
+                      className="spice-input"
                       type="checkbox"
                       value={spice}
                       onChange={handleSpice}

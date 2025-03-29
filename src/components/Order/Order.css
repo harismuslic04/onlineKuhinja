@@ -33,7 +33,10 @@
   font-size: 1.8rem;
   margin-bottom: 1rem;
 }
-
+.ordersecond h2 {
+  position: relative;
+  top: -24rem;
+}
 .orderimage {
   width: 10rem;
   height: 10rem;
@@ -47,24 +50,30 @@
 }
 
 .orderfirst i {
-  font-size: 1rem;
+  font-size: 1.2rem;
   background-color: white;
-  width: 3rem;
-  height: 2rem;
+  width: 3.5rem;
+  height: 2.5rem;
   border-radius: 30%;
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
+  gap: 0.5rem;
   color: black;
-  position: absolute;
-  top: 1rem;
   left: 1rem;
+  top: 1rem;
+  position: fixed;
 }
 
 .spice-boxes {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+
+  position: absolute;
+  top: 2rem;
+  width: 100%;
+  left: 0;
 }
 
 .spice-label {
@@ -73,18 +82,35 @@
   padding: 8px 12px;
   border-radius: 10px;
   cursor: pointer;
-  width: auto;
+  width: 5rem;
 }
-
-.textarea-notes,
-.textarea-notes2 {
-  width: 100%;
+.spice-input {
+  position: relative;
+  left: 0.5rem;
+}
+.textarea-notes {
+  width: 90%;
   height: 8rem;
   padding: 1rem;
   font-size: 1.2rem;
   margin-top: 1rem;
   border-radius: 8px;
   border: 1px solid #ccc;
+  position: absolute;
+  top: 25rem;
+  left: 1rem;
+}
+.textarea-notes2 {
+  width: 90%;
+  height: 8rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  position: absolute;
+  top: 17rem;
+  left: 1rem;
 }
 
 .order-button {
